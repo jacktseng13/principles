@@ -1,0 +1,27 @@
+<%= form_for(principle) do |f| %>
+  <% if principle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(principle.errors.count, "error") %> prohibited this principle from being saved:</h2>
+
+      <ul>
+      <% principle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :life %>
+    <%= f.text_field :life %>
+  </div>
+
+  <div class="field">
+    <%= f.label :money %>
+    <%= f.text_area :money %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
